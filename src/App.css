@@ -1,0 +1,96 @@
+body {
+  background-color: #3e2723;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.coffee-container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #5d4037;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.coffee-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffcc80;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.coffee-description {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.coffee-button {
+  background-color: #d7a86e;
+  color: #3e2723;
+  border: none;
+  padding: 12px 24px;
+  margin: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.coffee-button:hover {
+  background-color: #c38753;
+  transform: scale(1.05);
+}
+
+.coffee-input {
+  display: block;
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 2px solid #ffcc80;
+  border-radius: 5px;
+  background-color: #6d4c41;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.coffee-input:focus {
+  border-color: #ffab40;
+}
+
+.coffee-output {
+  background: #795548;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  margin-top: 20px;
+  overflow-x: auto;
+  max-height: 300px;
+  font-size: 16px;
+  color: #ffcc80;
+  line-height: 1.5;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 16px;
+}
+
+.coffee-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uploaded-image {
+  margin-top: 15px;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 3px solid #ffcc80;
+}
