@@ -8,7 +8,7 @@ const port = 5000;
 
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "*",
   methods: "GET,POST",
   allowedHeaders: "Content-Type,Authorization"
 }));
@@ -17,7 +17,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Requesting Data
-app.get("/coffees", (req, res) => {
+app.get("/api/coffees", (req, res) => {
   res.json([
     {
       "id": 1,
@@ -74,18 +74,18 @@ app.get("/coffees", (req, res) => {
 });
 
 // Sending Data
-app.post("/order", (req, res) => {
+app.post("/api/order", (req, res) => {
   const { coffee, size } = req.body;
   res.json({ message: `Order placed: ${size} ${coffee}` });
 });
 
 // Uploading Files
-app.post("/upload", upload.single("file"), (req, res) => {
+app.post("/api/upload", upload.single("file"), (req, res) => {
   res.json({ message: "File uploaded successfully", file: req.file });
 });
 
 // Authorized Requests
-app.get("/vip-orders", (req, res) => {
+app.get("/api/vip-orders", (req, res) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader !== "Bearer secret-shelian-token") {
     return res.status(403).json({ error: "Unauthorized" });
@@ -136,8 +136,8 @@ app.get("/vip-orders", (req, res) => {
   res.json({ message: "Here are your exclusive VIP orders" , payload: vipOrders});
 });
 
-// app.listen(port, () => {
-//   console.log(`Server running on http://localhost:${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
 
 export default serverless(app);
