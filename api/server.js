@@ -136,8 +136,8 @@ app.get("/api/vip-orders", (req, res) => {
   res.json({ message: "Here are your exclusive VIP orders" , payload: vipOrders});
 });
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on http://localhost:${port}`);
+// });
 
 export default serverless(app);
