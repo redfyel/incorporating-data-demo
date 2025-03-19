@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API_URL = "http://localhost:5000";
+const API_URL = "/api";
 
 const steps = [
   { 
