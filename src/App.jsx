@@ -49,18 +49,9 @@ const steps = [
 function fetchCoffees(setOutput) {
   setOutput({ loading: "Fetching coffee types..." });
   fetch(`${API_URL}/coffees`)
-    // .then(response => response.json())
-    // .then(data => setOutput({ data }))
-    // .catch(error => setOutput({ error: `Error: ${error.message}` }));
-
-    .then(res => res.text())  
-    .then(text => {
-      console.log("Raw Response:", text);  
-      return JSON.parse(text);  
-    })
-    .then(data => console.log("Parsed JSON:", data))
-    .catch(err => console.error("JSON Parse Error:", err));
-  
+    .then(response => response.json())
+    .then(data => setOutput({ data }))
+    .catch(error => setOutput({ error: `Error: ${error.message}` }))
 }
 
 function sendOrder(setOutput, inputs) {
