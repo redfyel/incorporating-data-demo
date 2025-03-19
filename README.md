@@ -1,12 +1,57 @@
-# React + Vite
+# 📦 Incorporating Data Demo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Incorporating Data Demo**! 🚀 This project demonstrates various data-handling techniques in a React application, backed by a Node.js & Express server.
 
-Currently, two official plugins are available:
+## 📌 Features
+- **Requesting Data** – Fetch data from an API
+- **Sending Data** – Submit data using POST requests
+- **Uploading Files** – Upload and preview images
+- **Authorized Requests** – Fetch protected data using tokens
+- **Saving Data Locally** – Store data using LocalStorage
+- **Handling Promise States** – Display loading, success, and error states
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Installation & Setup
 
-## Expanding the ESLint configuration
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/incorp-data-demo.git
+   cd incorp-data-demo
+   ```
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the backend server**:
+   ```bash
+   node server.js
+   ```
+   The server will run on `http://localhost:5000`
+
+4. **Start the React app**:
+   ```bash
+   npm start
+   ```
+   The frontend will be available at `http://localhost:5173`
+
+## 🔥 API Endpoints (Backend)
+| Method | Endpoint         | Description |
+|--------|----------------|-------------|
+| GET    | /coffees       | Fetch coffee types |
+| POST   | /order         | Place an order |
+| POST   | /upload        | Upload an image |
+| GET    | /vip-orders    | Fetch VIP orders (Requires token) |
+| POST   | /save-favorite | Save favorite coffee |
+
+## 🖼️ Uploading Images
+The app allows users to upload images, which are previewed immediately upon selection.
+
+## 🔑 Authorization
+For **VIP orders**, use the token:
+```plaintext
+secret-shelian-token
+```
+---
+Enjoy working with **Incorporating Data Demo**! 🚀🎉
+
