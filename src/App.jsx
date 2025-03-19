@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 
-const API_URL = "https://incorporating-data.vercel.app/api";
+const API_URL = "https://incorporating-data-demo.onrender.com";
 
 const steps = [
   { 
