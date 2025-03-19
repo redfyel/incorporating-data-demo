@@ -4,7 +4,7 @@ import multer from "multer";
 import serverless from "serverless-http";
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({
@@ -136,8 +136,8 @@ app.get("/vip-orders", (req, res) => {
   res.json({ message: "Here are your exclusive VIP orders" , payload: vipOrders});
 });
 
-// app.listen(port, () => {
-//   console.log(`Server running on http://localhost:${port}`);
-// });
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
 
-export default serverless(app);
+// export default serverless(app);
