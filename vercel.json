@@ -15,5 +15,12 @@
     { "src": "/api/(.*)", "dest": "api/server.js" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  ],
+    "functions": {
+      "api/*.js": {
+        "runtime": "edge"
+      }
+    }
+  
 }
+
