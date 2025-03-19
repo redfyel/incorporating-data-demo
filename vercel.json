@@ -14,5 +14,10 @@
   "routes": [
     { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "/api/server.js" }
-  ]
+  ],
+    "functions": {
+      "api/server.js": {
+        "maxDuration": 30
+      }
+    }
 }
