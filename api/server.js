@@ -17,7 +17,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Requesting Data
-app.get("/api/coffees", (req, res) => {
+app.get("/coffees", (req, res) => {
   res.json([
     {
       "id": 1,
@@ -74,18 +74,18 @@ app.get("/api/coffees", (req, res) => {
 });
 
 // Sending Data
-app.post("/api/order", (req, res) => {
+app.post("/order", (req, res) => {
   const { coffee, size } = req.body;
   res.json({ message: `Order placed: ${size} ${coffee}` });
 });
 
 // Uploading Files
-app.post("/api/upload", upload.single("file"), (req, res) => {
+app.post("/upload", upload.single("file"), (req, res) => {
   res.json({ message: "File uploaded successfully", file: req.file });
 });
 
 // Authorized Requests
-app.get("/api/vip-orders", (req, res) => {
+app.get("/vip-orders", (req, res) => {
   const authHeader = req.headers.authorization;
   if (!authHeader || authHeader !== "Bearer secret-shelian-token") {
     return res.status(403).json({ error: "Unauthorized" });
