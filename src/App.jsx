@@ -98,7 +98,7 @@ function saveFavorite(setOutput, inputs) {
 
   if (favoriteCoffee) {
     // Save the coffee as a JSON string in localStorage
-    localStorage.setItem("favoriteCoffee", JSON.stringify({ coffee: favoriteCoffee }));
+    localStorage.setItem("favoriteCoffee", JSON.stringify({ favoriteCoffee }));
     setOutput({ data: `Saved locally: ${favoriteCoffee}` });
   } else {
     setOutput({ error: "Please enter a favorite coffee before saving!" });
