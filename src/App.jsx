@@ -97,11 +97,18 @@ function saveFavorite(setOutput, inputs) {
   const { favoriteCoffee } = inputs;
 
   if (favoriteCoffee) {
-    localStorage.setItem("favoriteCoffee", favoriteCoffee);
+    // Save the coffee as a JSON string in localStorage
+    localStorage.setItem("favoriteCoffee", JSON.stringify({ coffee: favoriteCoffee }));
     setOutput({ data: `Saved locally: ${favoriteCoffee}` });
   } else {
     setOutput({ error: "Please enter a favorite coffee before saving!" });
   }
+}
+
+// Function to load favorite coffee
+function loadFavorite() {
+  const savedData = localStorage.getItem("favoriteCoffee");
+  return savedData ? JSON.parse(savedData).coffee : null;
 }
 
 
